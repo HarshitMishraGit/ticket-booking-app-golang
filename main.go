@@ -11,4 +11,11 @@ func main() {
 
 	var str string = "Hello, World!"
 	fmt.Printf("str = %s\n", str)
+
+	// Read input from the user
+	var firstName string
+	fmt.Print("Enter your first name: ")
+	fmt.Scan(&firstName)
+
+	fmt.Printf("Hello, %s\n", firstName)
 }
