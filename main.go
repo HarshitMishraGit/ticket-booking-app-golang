@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"ticket-booking-app/helper"
+)
 
 func main() {
 
@@ -11,7 +14,7 @@ func main() {
 		var firstName string
 		fmt.Print("Enter your first name: ")
 		fmt.Scan(&firstName)
-		_ = append(booking, firstName) // _ is used to decalre a variable that is not used
+		_ = helper.AddBooking(booking, firstName) // _ is used to decalre a variable that is not used
 		fmt.Printf("Hello, %s\n", firstName)
 		remaingSeats = remaingSeats - 1
 		fmt.Println("Remaining seats : ", remaingSeats)
