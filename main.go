@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"ticket-booking-app/helper"
+	"time"
 )
 
 func main() {
@@ -19,10 +20,21 @@ func main() {
 		remaingSeats = remaingSeats - 1
 		fmt.Println("Remaining seats : ", remaingSeats)
 
+		printTicket(firstName)
+
 		if remaingSeats == 0 {
 			fmt.Println("All seats are booked")
 			break
 		}
+
 	}
+
+}
+
+func printTicket(firstName string) {
+	time.Sleep(5 * time.Second)
+	fmt.Println("#############################################")
+	fmt.Println("Ticket booked for ", firstName)
+	fmt.Println("#############################################")
 
 }
