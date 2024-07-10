@@ -20,7 +20,7 @@ func main() {
 		remaingSeats = remaingSeats - 1
 		fmt.Println("Remaining seats : ", remaingSeats)
 
-		printTicket(firstName)
+		go printTicket(firstName)
 
 		if remaingSeats == 0 {
 			fmt.Println("All seats are booked")
