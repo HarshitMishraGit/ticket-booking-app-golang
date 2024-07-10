@@ -18,4 +18,10 @@ func main() {
 	fmt.Scan(&firstName)
 
 	fmt.Printf("Hello, %s\n", firstName)
+
+	var booking []string
+	booking = append(booking, "Hotel")
+	fmt.Print("Booking: ", booking, "\n")
+
+	 
 }
