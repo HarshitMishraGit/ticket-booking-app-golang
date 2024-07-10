@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"ticket-booking-app/helper"
 	"time"
 )
+
+var wg = sync.WaitGroup{}
 
 func main() {
 
@@ -20,6 +23,7 @@ func main() {
 		remaingSeats = remaingSeats - 1
 		fmt.Println("Remaining seats : ", remaingSeats)
 
+		wg.Add(1) // number of go routines to wait for
 		go printTicket(firstName)
 
 		if remaingSeats == 0 {
@@ -29,6 +33,7 @@ func main() {
 
 	}
 
+	wg.Wait() // wait for all go routines to finish
 }
 
 func printTicket(firstName string) {
@@ -36,5 +41,5 @@ func printTicket(firstName string) {
 	fmt.Println("#############################################")
 	fmt.Println("Ticket booked for ", firstName)
 	fmt.Println("#############################################")
-
+	wg.Done() // decrement the number of go routines to wait for
 }
